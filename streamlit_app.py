@@ -9,7 +9,6 @@ st.write(
     """
 )
 
-
 name_on_order = st.text_input("Name of Smoothie:", "")
 st.write("The name of your smoothie will be:", name_on_order)
 
@@ -47,3 +46,7 @@ if ingredient_list:
     if time_to_insert:
         session.sql(my_insert_stmt).collect()
         st.success(succes_string, icon="✅")
+
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+st.text.(fruityvice_response)
